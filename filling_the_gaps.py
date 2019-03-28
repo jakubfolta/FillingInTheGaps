@@ -11,6 +11,10 @@ import os
 import shutil
 
 # TODO: Write regex to find files with given prefix.
+file_regex - re.compile(r'''^[spam]         # filename begin with 'spam'
+    (\d*)
+''', re.VERBOSE)
+
 # TODO: Loop through files in specified directory with os.listdir().
 # TODO: Search for regex match.
 # TODO: Get regex groups.
