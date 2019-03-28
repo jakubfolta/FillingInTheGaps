@@ -5,9 +5,10 @@ in a single folder and locates any gaps in the numbering (such as if there is a 
 Program rename all the later files to close this gap.
 '''
 
-# TODO:
-# TODO:
-# TODO: 
+# TODO: Import essential modules.
+# TODO: Write regex to find files with given prefix.
+# TODO: Loop through files in specified directory with os.listdir().
+# TODO: Search for regex match.
 # TODO:
 # TODO:
 # TODO:
