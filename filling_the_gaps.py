@@ -10,13 +10,18 @@ import re
 import os
 import shutil
 
-# TODO: Write regex to find files with given prefix.
+# Set directory to check.
+dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
+
+# Write regex to find files with given prefix.
 file_regex - re.compile(r'''^[spam]     # filename begin with 'spam'
     (\d+)                               # one or more digits
     (.*)$                               # all text after digits
 ''', re.VERBOSE)
 
 # TODO: Loop through files in specified directory with os.listdir().
+for file in os.listdir(dir_to_check)
+
 # TODO: Search for regex match.
 # TODO: Get regex groups.
 # TODO: Fill in the gaps in the filenames.
