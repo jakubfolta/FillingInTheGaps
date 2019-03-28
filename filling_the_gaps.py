@@ -19,8 +19,9 @@ file_regex - re.compile(r'''^[spam]     # filename begin with 'spam'
     (.*)$                               # all text after digits
 ''', re.VERBOSE)
 
-# TODO: Loop through files in specified directory with os.listdir().
-for file in os.listdir(dir_to_check)
+# Loop through files in specified directory with os.listdir().
+for file in os.listdir(dir_to_check):
+
 
 # TODO: Search for regex match.
 # TODO: Get regex groups.
