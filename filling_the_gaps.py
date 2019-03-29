@@ -19,9 +19,13 @@ file_regex = re.compile(r'''^(spam)     # filename begin with 'spam'
     (.*)$                               # all text after digits
 ''', re.VERBOSE)
 
+# TODO: Set base filename to compare.
+base_filename = file_regex.search(os.listdir(dir_to_check))
+print(base_filename)
+
 # Loop through files in specified directory with os.listdir().
 for file in os.listdir(dir_to_check):
-    print(os.listdir(dir_to_check))
+    #print(os.listdir(dir_to_check))
 # Search for regex match.
     match = file_regex.search(file)
     if match == None:
@@ -32,9 +36,6 @@ for file in os.listdir(dir_to_check):
     spam = match.group(1)
     number = match.group(2)
     after_number = match.group(3)
-
-# TODO: Set base filename to compare.
-
 
 # TODO: Fill in the gaps in the filenames.
 
