@@ -28,6 +28,7 @@ print(first_file_number)
 
 
 # Loop through files in specified directory with os.listdir().
+num = 1
 for file in os.listdir(dir_to_check):
 
 # Search for regex match.
@@ -44,8 +45,12 @@ for file in os.listdir(dir_to_check):
 # TODO: Fill in the gaps in the filenames.
     if number == first_file_number:
         continue
-    elif int(number) > int(first_file_number) and int(first_file_number) != int(number) + 1:
-        next_in_order_filename = spam + 
+    elif int(number) == int(first_file_number) + num:
+        continue
+    else:
+        next_in_order_filename = spam + (int(number) + num) 
+
+         and int(first_file_number) != int(number) + 1:
     else:
         continue
 
