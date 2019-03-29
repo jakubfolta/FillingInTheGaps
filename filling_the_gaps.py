@@ -19,13 +19,18 @@ file_regex = re.compile(r'''^(spam)     # filename begin with 'spam'
     (.*)$                               # all text after digits
 ''', re.VERBOSE)
 
+print(os.listdir(dir_to_check))
+filenames_list = os.listdir(dir_to_check)
+files_list = ', '.join(filenames_list)
+print(files_list)
+
 # TODO: Set base filename to compare.
 base_filename = file_regex.search(os.listdir(dir_to_check))
-print(base_filename)
+print(base_filename.group())
 
 # Loop through files in specified directory with os.listdir().
 for file in os.listdir(dir_to_check):
-    #print(os.listdir(dir_to_check))
+
 # Search for regex match.
     match = file_regex.search(file)
     if match == None:
