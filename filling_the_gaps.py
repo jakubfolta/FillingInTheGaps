@@ -21,7 +21,7 @@ file_regex = re.compile(r'''^(spam)     # filename begin with 'spam'
 
 # Loop through files in specified directory with os.listdir().
 for file in os.listdir(dir_to_check):
-
+    print(os.listdir(dir_to_check))
 # Search for regex match.
     match = file_regex.search(file)
     if match == None:
@@ -35,7 +35,8 @@ for file in os.listdir(dir_to_check):
 
 # TODO: Set base filename to compare.
 
+
 # TODO: Fill in the gaps in the filenames.
-    if number
+
 
 # TODO: Change status on github.
