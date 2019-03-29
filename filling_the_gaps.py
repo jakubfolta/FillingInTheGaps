@@ -14,12 +14,13 @@ import shutil
 dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
 
 # Write regex to find files with given prefix.
-file_regex = re.compile(r'''(spam)     # filename begin with 'spam'
+file_regex = re.compile(r'''((.*)?spam)     # filename begin with 'spam'
     (\d+)                               # one or more digits
-    (\.txt(.*)?)$                            # all text after digits
+    (\.txt)                            # all text after digits
 ''', re.VERBOSE)
 #
 string_filenames = (' '.join(os.listdir(dir_to_check)))
+print(string_filenames)
 # filenames_list = os.listdir(dir_to_check)
 # files_list = ', '.join(filenames_list)
 # print(files_list)
@@ -27,7 +28,8 @@ string_filenames = (' '.join(os.listdir(dir_to_check)))
 # TODO: Set base filename to compare.
 base_filename = file_regex.search(string_filenames)
 print(base_filename.group())
-'''
+
+
 # Loop through files in specified directory with os.listdir().
 for file in os.listdir(dir_to_check):
 
@@ -46,4 +48,3 @@ for file in os.listdir(dir_to_check):
 
 
 # TODO: Change status on github.
-'''
