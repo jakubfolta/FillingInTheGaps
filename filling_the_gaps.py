@@ -44,6 +44,9 @@ for file in os.listdir(dir_to_check):
 # TODO: Fill in the gaps in the filenames.
     if number == first_file_number:
         continue
-    elif int(number) > int(first_file_number) and int(first_file_number) + 1
+    elif int(number) > int(first_file_number) and int(first_file_number) != int(number) + 1:
+        next_in_order_filename = spam + 
+    else:
+        continue
 
 # TODO: Change status on github.
