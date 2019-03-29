@@ -22,7 +22,9 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 # Set base filename to compare.
 string_filenames = (' '.join(os.listdir(dir_to_check)))
 base_filename = file_regex.search(string_filenames)
+file_number = base_filename.group(2)
 print(base_filename.group())
+print(file_number)
 
 
 # Loop through files in specified directory with os.listdir().
