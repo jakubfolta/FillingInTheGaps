@@ -21,17 +21,18 @@ file_regex = re.compile(r'''^(spam)     # filename begin with 'spam'
 
 # Loop through files in specified directory with os.listdir().
 for file in os.listdir(dir_to_check):
-    #print(file)
+
 # Search for regex match.
     match = file_regex.search(file)
     if match == None:
         continue
     print(match.group())
-
 # Get regex groups.
     spam = match.group(1)
     number = match.group(2)
     after_number = match.group(3)
 
 # TODO: Fill in the gaps in the filenames.
+
+
 # TODO: Change status on github.
