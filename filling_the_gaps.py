@@ -14,19 +14,18 @@ import shutil
 dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
 
 # Write regex to find files with given prefix.
-file_regex = re.compile(r'''^([spam])   # filename begin with 'spam'
+file_regex = re.compile(r'''(^spam)   # filename begin with 'spam'
     (\d+)                               # one or more digits
     (.*)$                               # all text after digits
 ''', re.VERBOSE)
 
 # Loop through files in specified directory with os.listdir().
 for file in os.listdir(dir_to_check):
-
+    print(file)
 # Search for regex match.
     match = file_regex.search(file)
     if match == None:
         continue
-    print(file)
     print(match.group())
 
 # Get regex groups.
