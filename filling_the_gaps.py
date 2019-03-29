@@ -22,9 +22,9 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 # Set base filename to compare.
 string_filenames = (' '.join(os.listdir(dir_to_check)))
 base_filename = file_regex.search(string_filenames)
-file_number = base_filename.group(2)
+first_file_number = base_filename.group(2)
 print(base_filename.group())
-print(file_number)
+print(first_file_number)
 
 
 # Loop through files in specified directory with os.listdir().
@@ -42,6 +42,8 @@ for file in os.listdir(dir_to_check):
     after_number = match.group(3)
 
 # TODO: Fill in the gaps in the filenames.
-
+    if number == first_file_number:
+        continue
+    elif int(number) > int(first_file_number) and int(first_file_number) + 1
 
 # TODO: Change status on github.
