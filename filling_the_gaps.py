@@ -14,18 +14,13 @@ import shutil
 dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
 
 # Write regex to find files with given prefix.
-file_regex = re.compile(r'''(spam)     # filename begins with 'spam'
-    (\d+)                               # one or more digits
-    (\.txt)                            # all text after digits
+file_regex = re.compile(r'''(spam)     # prefix 'spam'
+    (\d+)                              # one or more digits
+    (\.txt)                            # file extension
 ''', re.VERBOSE)
-#
-string_filenames = (' '.join(os.listdir(dir_to_check)))
-print(string_filenames)
-# filenames_list = os.listdir(dir_to_check)
-# files_list = ', '.join(filenames_list)
-# print(files_list)
 
-# TODO: Set base filename to compare.
+# Set base filename to compare.
+string_filenames = (' '.join(os.listdir(dir_to_check)))
 base_filename = file_regex.search(string_filenames)
 print(base_filename.group())
 
@@ -37,7 +32,7 @@ for file in os.listdir(dir_to_check):
     match = file_regex.search(file)
     if match == None:
        continue
-    print(match.group(3))
+    print(match.group())
 
 # Get regex groups.
     spam = match.group(1)
