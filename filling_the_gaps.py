@@ -22,10 +22,16 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 # Set base filename to compare.
 string_filenames = (' '.join(os.listdir(dir_to_check)))
 base_filename = file_regex.search(string_filenames)             # fix
-print(type(base_filename))
+
 first_file_number = base_filename.group(2)
-base_filename = re.sub(first_file_number, int(first_file_number), base_filename)
+string = base_filename.group()
+print(type(string))
+print(type(first_file_number))
+int_number = int(first_file_number)
+print(int_number)
+base_filename2 = re.sub(first_file_number, str(int_number), string)
 print(base_filename.group())
+print(base_filename2)
 print(first_file_number)
 
 
