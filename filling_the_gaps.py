@@ -42,11 +42,12 @@ for file in os.listdir(dir_to_check):
     number = match.group(2)
     after_number = match.group(3)
 
+    abspath = os.path.abspath(dir_to_check)
 # Check if filenames are in order.
     if number == first_file_number:
-
+        
         continue
-    elif int(number) == int(first_file_number) + num:
+'''    elif int(number) == int(first_file_number) + num:
         num += 1
         continue
     else:
@@ -54,14 +55,13 @@ for file in os.listdir(dir_to_check):
         print(next_in_order_filename)
 
 # Set abs path for new filename.
-        abspath = os.path.abspath(dir_to_check)
         old_filename_abspath = os.path.join(abspath, file)
         new_filename_abspath = os.path.join(abspath, next_in_order_filename)
         print(abspath)
         print(old_filename_abspath)
         print(new_filename_abspath)
         num += 1
-'''
+
 
 # Change filename.
         print('Change this filename: {}\nto this:\n{}'.format(old_filename_abspath, new_filename_abspath))
