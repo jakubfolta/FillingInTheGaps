@@ -31,10 +31,6 @@ print(first_file_number)
 num = 1
 for file in os.listdir(dir_to_check):
 
-# Set abs path.
-    abspath = os.path.abspath('.')
-    print(abspath)
-
 # Search for regex match.
     match = file_regex.search(file)
     if match == None:
@@ -46,13 +42,18 @@ for file in os.listdir(dir_to_check):
     number = match.group(2)
     after_number = match.group(3)
 
-# TODO: Fill in the gaps in the filenames.
+# Check if filenames are in order.
     if number == first_file_number:
         continue
     elif int(number) == int(first_file_number) + num:
         continue
     else:
         next_in_order_filename = spam + str((int(first_file_number) + num))
+        print(next_in_order_filename)
+# Set abs path for new filename.
+    abspath = os.path.abspath('.')
+    print(abspath)
+
 
 
 # TODO: Change status on github.
