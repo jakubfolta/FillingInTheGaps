@@ -31,6 +31,10 @@ print(first_file_number)
 num = 1
 for file in os.listdir(dir_to_check):
 
+# Set abs path.
+    abspath = os.path.abspath('.')
+    print(abspath)
+
 # Search for regex match.
     match = file_regex.search(file)
     if match == None:
@@ -48,10 +52,7 @@ for file in os.listdir(dir_to_check):
     elif int(number) == int(first_file_number) + num:
         continue
     else:
-        next_in_order_filename = spam + (int(number) + num) 
+        next_in_order_filename = spam + str((int(first_file_number) + num))
 
-         and int(first_file_number) != int(number) + 1:
-    else:
-        continue
 
 # TODO: Change status on github.
