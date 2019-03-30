@@ -21,8 +21,10 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 
 # Set base filename to compare.
 string_filenames = (' '.join(os.listdir(dir_to_check)))
-base_filename = file_regex.search(string_filenames)
+base_filename = file_regex.search(string_filenames)             # fix
+print(type(base_filename))
 first_file_number = base_filename.group(2)
+base_filename = re.sub(first_file_number, int(first_file_number), base_filename)
 print(base_filename.group())
 print(first_file_number)
 
@@ -44,8 +46,8 @@ for file in os.listdir(dir_to_check):
 
     abspath = os.path.abspath(dir_to_check)
 # Check if filenames are in order.
-    if number == first_file_number:
-        
+    if number == first_file_number:                 # fix
+
         continue
 '''    elif int(number) == int(first_file_number) + num:
         num += 1
