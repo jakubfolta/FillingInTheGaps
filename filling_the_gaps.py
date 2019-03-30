@@ -51,9 +51,16 @@ for file in os.listdir(dir_to_check):
         next_in_order_filename = spam + str((int(first_file_number) + num))
         print(next_in_order_filename)
 # Set abs path for new filename.
-    abspath = os.path.abspath('.')
-    print(abspath)
+        abspath = os.path.abspath('.')
+        old_filename_abspath = os.path.join(abspath, file)
+        new_filename_abspath = os.path.join(abspath, next_in_order_filename)
+        print(abspath)
+        print(old_filename_abspath)
+        print(new_filename_abspath)
 
 
+# Change filename.
+        print('Change this filename: {}\nto this:\n{}'.format(old_filename_abspath, new_filename_abspath))
+        #shutil.move(old_filename_abspath, new_filename_abspath)
 
 # TODO: Change status on github.
