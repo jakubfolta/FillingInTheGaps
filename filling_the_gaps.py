@@ -21,17 +21,17 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 
 # Set base filename to compare.
 string_filenames = (' '.join(os.listdir(dir_to_check)))
-base_filename = file_regex.search(string_filenames)             # fix
+base_filename = file_regex.search(string_filenames)
 
 first_file_number = base_filename.group(2)
-string = base_filename.group()
-print(type(string))
-print(type(first_file_number))
+
+base_filename = base_filename.group()
+
 int_number = int(first_file_number)
-print(int_number)
-base_filename2 = re.sub(first_file_number, str(int_number), string)
-print(base_filename.group())
-print(base_filename2)
+
+base_filename_fixed = re.sub(first_file_number, str(int_number), base_filename)
+print(base_filename)
+print(base_filename_fixed)
 print(first_file_number)
 
 
@@ -43,7 +43,6 @@ for file in os.listdir(dir_to_check):
     match = file_regex.search(file)
     if match == None:
        continue
-    #print(match.group())
 
 # Get regex groups.
     spam = match.group(1)
@@ -52,7 +51,11 @@ for file in os.listdir(dir_to_check):
 
     abspath = os.path.abspath(dir_to_check)
 # Check if filenames are in order.
-    if number == first_file_number:                 # fix
+    if number == first_file_number:
+        base_file_abspath = os.path.join.....
+        base_file_new_abspath = ....
+        print(...)
+        shutil.move(...)                 # fix
 
         continue
 '''    elif int(number) == int(first_file_number) + num:
