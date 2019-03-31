@@ -39,12 +39,9 @@ print(first_file_number)
 num = 1
 for file in os.listdir(dir_to_check):
     abspath = os.path.abspath(dir_to_check)
+    file_abspath = os.path.join(abspath, file)
 
 def fix_filename():
-    if number == 
-    changed_filename = spam + str((int(first_file_number))) + after_number
-    base_file_abspath = os.path.join(abspath, file)
-    base_file_new_abspath = os.path.join(abspath, base_filename_fixed)
 
 
 # Search for regex match.
@@ -57,11 +54,16 @@ def fix_filename():
     number = match.group(2)
     after_number = match.group(3)
 
+    changed_first_filename = spam + str((int(first_file_number))) + after_number
+    changed_filename = spam + str((int(first_file_number) + num)) + after_number
+    file_new_abspath = os.path.join(abspath, changed_filename)
 
 # Check if filenames are in order.
     if number == first_file_number:
+        changed_filename = spam + str((int(first_file_number))) + after_number
+
         print('Change this directory: {}\nto this:\n{}'.format(base_file_abspath, base_file_new_abspath))
-        #shutil.move(base_file_abspath, base_file_new_abspath)
+        #shutil.move(file_abspath, file_new_abspath)
         continue
     elif int(number) == int(first_file_number) + num:
 
