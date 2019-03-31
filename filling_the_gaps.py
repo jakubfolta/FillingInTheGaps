@@ -35,8 +35,9 @@ def fix_filename_number():
 # Loop through files in specified directory with os.listdir().
 num = 1
 
-for file in os.listdir(dir_to_check):
+for index, file in enumerate(os.listdir(dir_to_check)):
     file_abspath = os.path.join(abspath, file)
+    print(index)
 
 # Search for regex match.
     match = file_regex.search(file)
