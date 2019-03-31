@@ -48,21 +48,21 @@ for file in os.listdir(dir_to_check):
     spam = match.group(1)
     number = match.group(2)
     after_number = match.group(3)
-
+'''
+    next_in_order_filename = spam + str((int(first_file_number) + num)) + after_number
     abspath = os.path.abspath(dir_to_check)
 # Check if filenames are in order.
     if number == first_file_number:
-        base_file_abspath = os.path.join.....
-        base_file_new_abspath = ....
+        base_file_abspath = os.path.join(abspath, file)
+        base_file_new_abspath = os.path.join(abspath, base_filename_fixed)
         print(...)
         shutil.move(...)                 # fix
 
         continue
-'''    elif int(number) == int(first_file_number) + num:
+    elif int(number) == int(first_file_number) + num:
         num += 1
         continue
     else:
-        next_in_order_filename = spam + str((int(first_file_number) + num)) + after_number
         print(next_in_order_filename)
 
 # Set abs path for new filename.
