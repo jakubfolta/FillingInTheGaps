@@ -68,9 +68,4 @@ for file in os.listdir(dir_to_check):
         num += 1
         continue
 
-# Change filename.
-        print('Change this filename: {}\nto this:\n{}'.format(old_filename_abspath, new_filename_abspath))
-        #shutil.move(old_filename_abspath, new_filename_abspath)
-
 # TODO: Change status on github.
-'''
