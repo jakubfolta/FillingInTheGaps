@@ -25,19 +25,20 @@ base_filename = file_regex.search(string_filenames)
 first_file_number = base_filename.group(2)
 abspath = os.path.abspath(dir_to_check)
 
+print(base_filename.group())
+
 def fix_filename():
-    print('Change this directory: {}\nto this:\n{}'.format(file_abspath, file_new_abspath))
+    print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
     #shutil.move(file_abspath, file_new_abspath)
 def fix_filename_number():
-    print('Change this directory: {}\nto this:\n{}'.format(file_abspath, file_new_number_abspath))
+    print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_number_abspath))
     #shutil.move(file_abspath, file_new_number_abspath)
 
 # Loop through files in specified directory with os.listdir().
 num = 1
 
-for index, file in enumerate(os.listdir(dir_to_check)):
+for file in os.listdir(dir_to_check):
     file_abspath = os.path.join(abspath, file)
-    print(index)
 
 # Search for regex match.
     match = file_regex.search(file)
