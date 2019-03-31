@@ -22,7 +22,6 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 # Set base file number to compare.
 string_filenames = (' '.join(os.listdir(dir_to_check)))
 base_filename = file_regex.search(string_filenames)
-base_filename_match = base_filename.group()
 first_file_number = base_filename.group(2)
 
 def fix_filename():
