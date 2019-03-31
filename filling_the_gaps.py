@@ -42,10 +42,11 @@ for file in os.listdir(dir_to_check):
     file_abspath = os.path.join(abspath, file)
 
 def fix_filename():
-    if number == first_file_number:
-        print('Change this directory: {}\nto this:\n{}'.format(file_abspath, file_new_number_abspath))
+    print('Change this directory: {}\nto this:\n{}'.format(file_abspath, file_new_abspath))
     #shutil.move(file_abspath, file_new_abspath)
-
+def fix_filename_number():
+    print('Change this directory: {}\nto this:\n{}'.format(file_abspath, file_new_number_abspath))
+    #shutil.move(file_abspath, file_new_number_abspath)
 
 # Search for regex match.
     match = file_regex.search(file)
