@@ -68,10 +68,10 @@ for file in os.listdir(dir_to_check):
     # file_new_number_abspath = os.path.join(abspath, changed_filename_number)
 
 # Check if filenames are in order.
-    if number == first_file_number and not os.path.exists:
+    if number == first_file_number and not os.path.exists(first_file_abspath):
         fix_filename()
         continue
-    elif int(number) != (int(first_file_number) + num):
+    elif int(number) == (int(first_file_number) + num) and not :
         fix_filename()
         num += 1
         continue
