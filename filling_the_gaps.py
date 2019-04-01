@@ -71,7 +71,7 @@ for file in os.listdir(dir_to_check):
     if number == first_file_number and not os.path.exists(first_file_abspath):
         fix_filename()
         continue
-    elif int(number) == (int(first_file_number) + num) and number != str(int(first_file_number) + num)  :...................
+    elif int(number) == (int(first_file_number) + num) and number != str(int(first_file_number) + num):...................
         fix_filename()
         num += 1
         continue
