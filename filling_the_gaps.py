@@ -50,10 +50,18 @@ for file in os.listdir(dir_to_check):
 
 # Set new filenames and absolute paths.
     file_abspath = os.path.join(abspath, file)
+
+    digit = 0
+    while True:
+        changed_filename = spam + str(int(first_file_number) + digit) + after_number
+        file_new_abspath = os.path.join(abspath, changed_filename)
+        if not os.path.exists(file_new_abspath):
+            break
+        digit += 1
+
     changed_filename = spam + str((int(number))) + after_number
     changed_filename_number = spam + str((int(first_file_number) + num)) + after_number
 
-    file_new_abspath = os.path.join(abspath, changed_filename)
     file_new_number_abspath = os.path.join(abspath, changed_filename_number)
 
 # Check if filenames are in order.
