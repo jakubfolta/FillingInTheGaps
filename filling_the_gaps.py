@@ -21,13 +21,10 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 
 # Set base file number to compare and absolute path to specified directory.
 string_filenames = (' '.join(os.listdir(dir_to_check)))
-print(string_filenames)
 
 base_filename = file_regex.search(string_filenames)
-#first_file_number = base_filename.group(2)
+first_file_number = base_filename.group(2)
 abspath = os.path.abspath(dir_to_check)
-
-print(base_filename)
 
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
@@ -40,7 +37,6 @@ def fix_filename_number():
 num = 1
 
 for file in os.listdir(dir_to_check):
-    file_abspath = os.path.join(abspath, file)
 
 # Search for regex match.
     match = file_regex.search(file)
@@ -53,6 +49,7 @@ for file in os.listdir(dir_to_check):
     after_number = match.group(3)
 
 # Set new filenames and absolute paths.
+    file_abspath = os.path.join(abspath, file)
     changed_filename = spam + str((int(number))) + after_number
     changed_filename_number = spam + str((int(first_file_number) + num)) + after_number
 
@@ -60,7 +57,7 @@ for file in os.listdir(dir_to_check):
     file_new_number_abspath = os.path.join(abspath, changed_filename_number)
 
 # Check if filenames are in order.
-    if number == first_file_number:
+    if number == first_file_number and not os.path.exists(file_new_abspath):
         fix_filename()
         continue
     elif int(number) == int(first_file_number) + num:
