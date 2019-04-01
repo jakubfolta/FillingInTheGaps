@@ -21,11 +21,13 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 
 # Set base file number to compare and absolute path to specified directory.
 string_filenames = (' '.join(os.listdir(dir_to_check)))
+print(string_filenames)
+
 base_filename = file_regex.search(string_filenames)
-first_file_number = base_filename.group(2)
+#first_file_number = base_filename.group(2)
 abspath = os.path.abspath(dir_to_check)
 
-print(base_filename.group())
+print(base_filename)
 
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
