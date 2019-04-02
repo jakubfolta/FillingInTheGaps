@@ -61,7 +61,7 @@ for file in os.listdir(dir_to_check):
         if not os.path.exists(file_new_abspath):
             break
         digit += 1
-
+fd
 # Check if filenames are in order.
     if number == first_file_number and number != str(int(first_file_number)):
         print('IF')
