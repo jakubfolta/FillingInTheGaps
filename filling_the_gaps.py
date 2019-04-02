@@ -49,10 +49,10 @@ for file in os.listdir(dir_to_check):
     after_number = match.group(3)
 
 # Set new filenames and absolute paths.
+    file_abspath = os.path.join(abspath, file)
+
     changed_first_filename = spam + str(int(first_file_number)) + after_number
     first_file_abspath = os.path.join(abspath, changed_first_filename)
-
-    file_abspath = os.path.join(abspath, file)
 
     digit = 0
     while True:
@@ -61,23 +61,18 @@ for file in os.listdir(dir_to_check):
         if not os.path.exists(file_new_abspath):
             break
         digit += 1
-    #
-    # changed_filename = spam + str((int(number))) + after_number
-    # changed_filename_number = spam + str((int(first_file_number) + num)) + after_number
-    #
-    # file_new_number_abspath = os.path.join(abspath, changed_filename_number)
 
 # Check if filenames are in order.
     if number == first_file_number and not os.path.exists(first_file_abspath):
         fix_filename()
         continue
-    elif int(number) == (int(first_file_number) + num) and number != str(int(first_file_number) + num):...................
+    elif int(number) == (int(first_file_number) + num) and number != str(int(first_file_number) + num):
         fix_filename()
         num += 1
         continue
-    # else:
-    #     fix_filename()
-    #     num += 1
-    #     continue
+    else:
+        fix_filename()
+        num += 1
+        continue
 
 # TODO: Change status on github.
