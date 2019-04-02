@@ -26,9 +26,13 @@ base_filename = file_regex.search(string_filenames)
 first_file_number = base_filename.group(2)
 abspath = os.path.abspath(dir_to_check)
 
+file = file_regex.findall(string_filenames)
+print(file)
+
+print(first_file_number)
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
-    #shutil.move(file_abspath, file_new_abspath)
+    shutil.move(file_abspath, file_new_abspath)
 
 # Loop through files in specified directory with os.listdir().
 num = 1
@@ -65,7 +69,7 @@ for file in os.listdir(dir_to_check):
         print('IF')
         fix_filename()
         continue
-    elif number != str(int(first_file_number) + num):
+    elif number != str(int(first_file_number) + num) and number != first_file_number:
         print('ELIF')
         fix_filename()
         num += 1
