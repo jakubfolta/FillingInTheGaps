@@ -26,15 +26,11 @@ base_filename = file_regex.search(string_filenames)
 first_file_number = base_filename.group(2)
 abspath = os.path.abspath(dir_to_check)
 
-file = file_regex.findall(string_filenames)
-print(file)
-print('Number of matches: ' + str(len(file)))
-print(int(first_file_number) + len(file))
-
+file = os.listdir(dir_to_check)
 range_of_numbers = range(int(first_file_number), int(first_file_number) + len(file))
 print(range_of_numbers)
-print( 13 in range_of_numbers )
 print(first_file_number)
+
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
     shutil.move(file_abspath, file_new_abspath)
@@ -58,9 +54,6 @@ for file in os.listdir(dir_to_check):
 # Set new filenames and absolute paths.
     file_abspath = os.path.join(abspath, file)
 
-    changed_first_filename = spam + str(int(first_file_number)) + after_number
-    first_file_abspath = os.path.join(abspath, changed_first_filename)
-
     digit = 0
     while True:
         changed_filename = spam + str(int(first_file_number) + digit) + after_number
@@ -70,7 +63,6 @@ for file in os.listdir(dir_to_check):
         digit += 1
 
 # Check if filenames are in order.
-'''
     if number == first_file_number and number != str(int(first_file_number)):
         print('IF')
         fix_filename()
@@ -79,7 +71,7 @@ for file in os.listdir(dir_to_check):
         print('ELIF1')
         num += 1
         continue
-    elif number != str(int(first_file_number) + num) and number not in range_of_numbers:
+    elif number != str(int(first_file_number) + num) and int(number) not in range_of_numbers:
         print('ELIF')
         fix_filename()
         num += 1
