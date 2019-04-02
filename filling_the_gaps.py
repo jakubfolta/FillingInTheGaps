@@ -62,20 +62,21 @@ for file in os.listdir(dir_to_check):
 
 # Check if filenames are in order.
     if number == first_file_number and number != (str(int(first_file_number))):
+        print('IF')
         fix_filename()
         continue
     elif number != str(int(first_file_number) + num):
+        print('ELIF')
         fix_filename()
         num += 1
         continue
-'''    # elif int(number) != (int(first_file_number) + num):
+    # elif int(number) != (int(first_file_number) + num):
     #     fix_filename()
     #     num += 1
     #     continue
     else:
-        fix_filename()
+        print('ELSE')
         num += 1
         continue
 
 # TODO: Change status on github.
-'''
