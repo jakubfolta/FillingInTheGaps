@@ -28,7 +28,12 @@ abspath = os.path.abspath(dir_to_check)
 
 file = file_regex.findall(string_filenames)
 print(file)
+print('Number of matches: ' + str(len(file)))
+print(int(first_file_number) + len(file))
 
+range_of_numbers = range(int(first_file_number), int(first_file_number) + len(file))
+print(range_of_numbers)
+print( 2 in )
 print(first_file_number)
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
@@ -65,22 +70,23 @@ for file in os.listdir(dir_to_check):
         digit += 1
 
 # Check if filenames are in order.
-    if number == first_file_number and number != (str(int(first_file_number))):
+'''
+    if number == first_file_number and number != str(int(first_file_number)):
         print('IF')
         fix_filename()
+        continue
+    elif number == str(int(first_file_number) + num):
+        print('ELIF1')
+        num += 1
         continue
     elif number != str(int(first_file_number) + num) and number != first_file_number:
         print('ELIF')
         fix_filename()
         num += 1
         continue
-    # elif int(number) != (int(first_file_number) + num):
-    #     fix_filename()
-    #     num += 1
-    #     continue
     else:
         print('ELSE')
-        num += 1
         continue
 
 # TODO: Change status on github.
+'''
