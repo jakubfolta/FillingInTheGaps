@@ -28,10 +28,10 @@ abspath = os.path.abspath(dir_to_check)
 
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
-    #shutil.move(file_abspath, file_new_abspath)
-def fix_filename_number():
-    print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_number_abspath))
-    #shutil.move(file_abspath, file_new_number_abspath)
+    shutil.move(file_abspath, file_new_abspath)
+# def fix_filename_number():
+#     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_number_abspath))
+#     #shutil.move(file_abspath, file_new_number_abspath)
 
 # Loop through files in specified directory with os.listdir().
 num = 1
@@ -41,7 +41,8 @@ for file in os.listdir(dir_to_check):
 # Search for regex match.
     match = file_regex.search(file)
     if match == None:
-       continue
+        continue
+    print(match.group())
 
 # Get regex groups.
     spam = match.group(1)
@@ -61,18 +62,23 @@ for file in os.listdir(dir_to_check):
         if not os.path.exists(file_new_abspath):
             break
         digit += 1
-
+'''
 # Check if filenames are in order.
     if number == first_file_number and not os.path.exists(first_file_abspath):
         fix_filename()
         continue
-    elif int(number) == (int(first_file_number) + num) and number != str(int(first_file_number) + num):
-        fix_filename()
-        num += 1
-        continue
+    # elif int(number) == (int(first_file_number) + num) and number != str(int(first_file_number) + num):
+    #     fix_filename()
+    #     num += 1
+    #     continue
+    # elif int(number) != (int(first_file_number) + num):
+    #     fix_filename()
+    #     num += 1
+    #     continue
     else:
         fix_filename()
         num += 1
         continue
 
 # TODO: Change status on github.
+'''
