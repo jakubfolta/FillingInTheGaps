@@ -33,7 +33,7 @@ print(int(first_file_number) + len(file))
 
 range_of_numbers = range(int(first_file_number), int(first_file_number) + len(file))
 print(range_of_numbers)
-print( 2 in )
+print( 13 in range_of_numbers )
 print(first_file_number)
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
@@ -79,7 +79,7 @@ for file in os.listdir(dir_to_check):
         print('ELIF1')
         num += 1
         continue
-    elif number != str(int(first_file_number) + num) and number != first_file_number:
+    elif number != str(int(first_file_number) + num) and number not in range_of_numbers:
         print('ELIF')
         fix_filename()
         num += 1
