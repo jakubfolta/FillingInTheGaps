@@ -27,17 +27,13 @@ first_file_number = base_filename.group(2)
 abspath = os.path.abspath(dir_to_check)
 
 number_of_matches = len(file_regex.findall(string_filenames))
-#print(number_of_matches)
 range_for_filenumbers = range(int(first_file_number), int(first_file_number) + number_of_matches)
-#print(range_for_filenumbers)
 
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
     shutil.move(file_abspath, file_new_abspath)
 
 # Loop through files in specified directory with os.listdir().
-num = 1
-
 for file in os.listdir(dir_to_check):
 
 # Search for regex match.
@@ -62,13 +58,9 @@ for file in os.listdir(dir_to_check):
             break
         digit += 1
 
-# Check if filenames are in order.
+# Check if filenames are in order and fix if needed.
     if number == str(int(first_file_number)) or int(number) in range_for_filenumbers:
-        print('IF')
-        continue
-    elif number == str(int(first_file_number) + num):
-        print('File in order.\n')
-        num += 1
+        print('File number in range for filenumbers in this directory.\n')
         continue
     else:
         fix_filename()
@@ -77,4 +69,4 @@ for file in os.listdir(dir_to_check):
 else:
     print('All files in order.')
 
-# TODO: Change status on github.
+# Change status on github.
