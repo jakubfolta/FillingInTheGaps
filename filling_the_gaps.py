@@ -63,7 +63,7 @@ for file in os.listdir(dir_to_check):
         digit += 1
 
 # Check if filenames are in order.
-    if number == str(int(first_file_number)):
+    if number == str(int(first_file_number)) or int(number) in range_for_filenumbers:
         print('IF')
         continue
     elif number == str(int(first_file_number) + num):
