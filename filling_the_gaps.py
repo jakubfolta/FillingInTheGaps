@@ -63,14 +63,14 @@ for file in os.listdir(dir_to_check):
         print('IF')
         continue
     elif number == str(int(first_file_number) + num):
-        print('File in order.')
+        print('File in order.\n')
         num += 1
         continue
     else:
-        print('ELSE')
         fix_filename()
+        print('File fixed.\n')
         continue
 else:
-    print('All files ')
+    print('All files in order.')
 
 # TODO: Change status on github.
