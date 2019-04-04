@@ -26,9 +26,11 @@ base_filename = file_regex.search(string_filenames)
 first_file_number = base_filename.group(2)
 abspath = os.path.abspath(dir_to_check)
 
+# Set number of matches in given directory and range of numbers which filenames should have.
 number_of_matches = len(file_regex.findall(string_filenames))
 range_for_filenumbers = range(int(first_file_number), int(first_file_number) + number_of_matches)
 
+# Create function to change filename.
 def fix_filename():
     print('Change this directory:\n{}\nto this:\n{}\n'.format(file_abspath, file_new_abspath))
     shutil.move(file_abspath, file_new_abspath)
