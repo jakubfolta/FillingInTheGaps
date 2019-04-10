@@ -4,12 +4,16 @@
 in a single folder and locates any gaps in the numbering (such as if there is a spam001.txt and spam003.txt but no spam002.txt).
 Program rename all the later files to close this gap.'''
 
-# TODO: Import essential modules.
+# Import essential modules.
+import os
+import re
+import shutil
+
 # TODO: Set directory to check.
 # TODO: Create regex.
 # TODO: Use for loop and os.listdir() to check files.
 # TODO: Create new filename with while loop.
-# TODO:
+# TODO: Search regex.
 # TODO:
 # TODO:
 # TODO:
