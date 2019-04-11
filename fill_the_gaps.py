@@ -20,7 +20,7 @@ spam_regex = re.compile(r'''(spam)    # "spam" word in filename
 
 # Get number of first file to compare.
 first_file_number = spam_regex.search(' '.join(os.listdir(dir_to_check)))
-print(first_file_number.group())
+print(first_file_number.group(2))
 
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
