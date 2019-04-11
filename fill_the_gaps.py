@@ -15,7 +15,7 @@ dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
 # Create regex.
 spam_regex = re.compile(r''' ^(spam)    # "spam" word in filename
     (\d+)                               # one or more digits
-    (\.txt)
+    (\.txt)                             # ".txt" at the end of filename
 ''', re.VERBOSE)
 
 # Use for loop and os.listdir() to check files.
@@ -25,8 +25,15 @@ for file in os.listdir(dir_to_check):
         continue
     print(match.group())
 
+# Get matched file groups.
+    spam = match.group(1)
+    number = match.group(2)
+    file_ext = match.group(3)
+
+
 # TODO: Create new filename with while loop.
+
+
 # TODO: Search regex.
-# TODO:
 # TODO:
 # TODO:
