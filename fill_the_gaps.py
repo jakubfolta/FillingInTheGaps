@@ -19,12 +19,17 @@ spam_regex = re.compile(r'''(spam)    # "spam" word in filename
 ''', re.VERBOSE)
 
 # Get number of first file to compare.
-first_file_number = spam_regex.search(' '.join(os.listdir(dir_to_check)))
-print(first_file_number.group(2))
+first_matched_file = spam_regex.search(' '.join(os.listdir(dir_to_check)))
+first_file_number = first_matched_file.group(2)
+print(first_file_number)
+
 
 # Get number of matched files and set range of numbers for files in given directory.
 number_of_matches = len(spam_regex.findall(' '.join(os.listdir(dir_to_check))))
 print(number_of_matches)
+range_for_filenumbers = range(int(first_file_number), int(first_file_number) + number_of_matches)
+print(range_for_filenumbers)
+
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
     match = spam_regex.search(file)
