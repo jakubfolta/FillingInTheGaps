@@ -29,6 +29,7 @@ number_of_matches = len(spam_regex.findall(' '.join(os.listdir(dir_to_check))))
 print(number_of_matches)
 range_for_filenumbers = range(int(first_file_number), int(first_file_number) + number_of_matches)
 print(range_for_filenumbers)
+print(12 in range_for_filenumbers)
 
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
