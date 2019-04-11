@@ -9,10 +9,15 @@ import os
 import re
 import shutil
 
-# TODO: Set directory to check.
+# Set directory to check.
 dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
 
-# TODO: Create regex.
+# Create regex.
+spam_regex = re.compile(r''' ^(spam)    # "spam" word in filename
+    (\d+)                               # one or more digits
+    (\.txt)
+''', re.VERBOSE)
+
 # TODO: Use for loop and os.listdir() to check files.
 # TODO: Create new filename with while loop.
 # TODO: Search regex.
