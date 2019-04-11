@@ -10,6 +10,8 @@ import re
 import shutil
 
 # TODO: Set directory to check.
+dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
+
 # TODO: Create regex.
 # TODO: Use for loop and os.listdir() to check files.
 # TODO: Create new filename with while loop.
