@@ -22,6 +22,9 @@ spam_regex = re.compile(r'''(spam)    # "spam" word in filename
 first_file_number = spam_regex.search(' '.join(os.listdir(dir_to_check)))
 print(first_file_number.group(2))
 
+# Get number of matched files and set range of numbers for files in given directory.
+number_of_matches = len(spam_regex.findall(' '.join(os.listdir(dir_to_check))))
+print(number_of_matches)
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
     match = spam_regex.search(file)
