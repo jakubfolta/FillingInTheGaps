@@ -18,7 +18,13 @@ spam_regex = re.compile(r''' ^(spam)    # "spam" word in filename
     (\.txt)
 ''', re.VERBOSE)
 
-# TODO: Use for loop and os.listdir() to check files.
+# Use for loop and os.listdir() to check files.
+for file in os.listdir(dir_to_check):
+    match = spam_regex.search(file)
+    if match == None:
+        continue
+    print(match.group())
+
 # TODO: Create new filename with while loop.
 # TODO: Search regex.
 # TODO:
