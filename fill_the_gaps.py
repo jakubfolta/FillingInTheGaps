@@ -13,10 +13,14 @@ import shutil
 dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
 
 # Create regex.
-spam_regex = re.compile(r''' ^(spam)    # "spam" word in filename
+spam_regex = re.compile(r'''(spam)    # "spam" word in filename
     (\d+)                               # one or more digits
     (\.txt)                             # ".txt" at the end of filename
 ''', re.VERBOSE)
+
+# Get number of first file to compare.
+first_file_number = spam_regex.search(' '.join(os.listdir(dir_to_check)))
+print(first_file_number.group())
 
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
