@@ -13,9 +13,9 @@ import shutil
 dir_to_check = r'C:\Users\ogi-8\Desktop\PythonProjects\FillingInTheGaps\check'
 
 # Create regex.
-spam_regex = re.compile(r'''(spam)    # "spam" word in filename
-    (\d+)                               # one or more digits
-    (\.txt)                             # ".txt" at the end of filename
+spam_regex = re.compile(r'''(spam)      # "spam" word in filename
+                            (\d+)       # one or more digits
+                            (\.txt)     # ".txt" at the end of filename
 ''', re.VERBOSE)
 
 # Get first matched file and number of first file.
@@ -25,6 +25,11 @@ first_file_number = first_matched_file.group(2)
 # Get number of matched files and set range of numbers for files in given directory.
 number_of_matches = len(spam_regex.findall(' '.join(os.listdir(dir_to_check))))
 range_for_filenumbers = range(int(first_file_number), int(first_file_number) + number_of_matches)
+
+# Create funtion to change filenames.
+def fix_filename():
+    print('Change this filename: {}\nto this:\n{}'.format(file, new_filename))
+    shutil.move(file, new_filename)
 
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
@@ -39,11 +44,21 @@ for file in os.listdir(dir_to_check):
     file_ext = match.group(3)
 
 
-# TODO: Create new filename with while loop.
+# Create new filename with while loop.
     num = 0
     while True:
-        new_filename = spam + first_file_number + str(num) +  
+        new_filename = spam + str(int(first_file_number) + num) + file_ext
+        if not os.path.exists(new_filename):
+            break
+        num += 1
 
-# TODO: Search regex.
-# TODO:
+# TODO: Set absolute paths to old and new filen
+
+
+# Check files.
+    if match.group(2) == str(int(match.group(2))) and int(match.group(2)) in range_for_filenumbers:
+        continue
+    else:
+        fix_filename()
+
 # TODO:
