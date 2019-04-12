@@ -31,7 +31,7 @@ print(range_for_filenumbers)
 def fix_filename():
     print('Change this filename: {}\nto this:\n{}'.format(file, new_filename))
     shutil.move(file_abspath, newfile_abspath)
-
+    print('Filename fixed!\n')
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
     match = spam_regex.search(file)
@@ -62,4 +62,5 @@ for file in os.listdir(dir_to_check):
     else:
         fix_filename()
 
-# TODO:
+else:
+    print('All filenames in order!')
