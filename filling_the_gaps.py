@@ -20,7 +20,7 @@ file_regex = re.compile(r'''(spam)     # prefix 'spam'
 ''', re.VERBOSE)
 
 # Set base file number to compare and absolute path to specified directory.
-string_filenames = (' '.join(os.listdir(dir_to_check)))
+string_filenames = ' '.join(os.listdir(dir_to_check))
 
 base_filename = file_regex.search(string_filenames)
 first_file_number = base_filename.group(2)
@@ -61,13 +61,13 @@ for file in os.listdir(dir_to_check):
         digit += 1
 
 # Check if filenames are in order and fix if needed.
-    if number == str(int(first_file_number)) or int(number) in range_for_filenumbers:
+    if number == str(int(number)) and int(number) in range_for_filenumbers:
         print('File number in range for filenumbers in this directory.\n')
         continue
     else:
         fix_filename()
         print('File fixed.\n')
-        continue
+
 else:
     print('All files in order.')
 
