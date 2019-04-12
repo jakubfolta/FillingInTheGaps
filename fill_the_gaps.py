@@ -28,7 +28,6 @@ range_for_filenumbers = range(int(first_file_number), int(first_file_number) + n
 list_of_filenumbers = list(range_for_filenumbers)
 print('Range for filenumbers:\n{}\n'.format(list_of_filenumbers))
 
-
 # Create funtion to change filenames.
 def fix_filename():
     print('Change this filename: {}\nto this:\n{}'.format(file, new_filename))
@@ -64,6 +63,5 @@ for file in os.listdir(dir_to_check):
         continue
     else:
         fix_filename()
-
 else:
     print('All filenames in order!')
