@@ -30,7 +30,7 @@ print(range_for_filenumbers)
 # Create funtion to change filenames.
 def fix_filename():
     print('Change this filename: {}\nto this:\n{}'.format(file, new_filename))
-    #shutil.move(file_abspath, newfile_abspath)
+    shutil.move(file_abspath, newfile_abspath)
 
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
@@ -39,23 +39,22 @@ for file in os.listdir(dir_to_check):
         continue
     print(match.group())
 
+# Set absolute path to old file.
+    file_abspath = os.path.join(dir_to_check, file)
+
 # Get matched file groups.
     spam = match.group(1)
     number = match.group(2)
     file_ext = match.group(3)
 
-
 # Create new filename with while loop.
     num = 0
     while True:
         new_filename = spam + str(int(first_file_number) + num) + file_ext
-        if not os.path.exists(new_filename):
+        newfile_abspath = os.path.join(dir_to_check, new_filename)
+        if not os.path.exists(newfile_abspath):
             break
         num += 1
-
-# Set absolute paths to old and new filen
-    file_abspath = os.path.join(dir_to_check, file)
-    newfile_abspath = os.path.join(dir_to_check, new_filename)
 
 # Check files.
     if match.group(2) == str(int(match.group(2))) and int(match.group(2)) in range_for_filenumbers:
