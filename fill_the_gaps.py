@@ -60,10 +60,10 @@ for file in os.listdir(dir_to_check):
 
 # Check files.
     if number == str(int(number)) and int(number) in range_for_filenumbers:
-        print('File "{}" in range for filenumbers.'.format(match.group()))
+        print('File "{}" in range for filenumbers.\n'.format(match.group()))
         continue
     else:
         fix_filename()
 
 else:
-    print('\nAll filenames in order!')
+    print('All filenames in order!')
