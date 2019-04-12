@@ -25,11 +25,12 @@ first_file_number = first_matched_file.group(2)
 # Get number of matched files and set range of numbers for files in given directory.
 number_of_matches = len(spam_regex.findall(' '.join(os.listdir(dir_to_check))))
 range_for_filenumbers = range(int(first_file_number), int(first_file_number) + number_of_matches)
+print(range_for_filenumbers)
 
 # Create funtion to change filenames.
 def fix_filename():
     print('Change this filename: {}\nto this:\n{}'.format(file, new_filename))
-    shutil.move(file, new_filename)
+    #shutil.move(file_abspath, newfile_abspath)
 
 # Use for loop and os.listdir() to check files.
 for file in os.listdir(dir_to_check):
@@ -52,8 +53,9 @@ for file in os.listdir(dir_to_check):
             break
         num += 1
 
-# TODO: Set absolute paths to old and new filen
-
+# Set absolute paths to old and new filen
+    file_abspath = os.path.join(dir_to_check, file)
+    newfile_abspath = os.path.join(dir_to_check, new_filename)
 
 # Check files.
     if match.group(2) == str(int(match.group(2))) and int(match.group(2)) in range_for_filenumbers:
