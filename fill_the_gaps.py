@@ -58,6 +58,7 @@ for file in os.listdir(dir_to_check):
 
 # Check files.
     if match.group(2) == str(int(match.group(2))) and int(match.group(2)) in range_for_filenumbers:
+        print('File in range for filenumbers.')
         continue
     else:
         fix_filename()
